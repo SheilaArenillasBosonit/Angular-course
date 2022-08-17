@@ -1,0 +1,42 @@
+<p>Listado de heroes</p>
+
+<ul>
+    <!--Para mostar el contenido de un array en el documento html, podemos hacerlo:-->
+    <li>{{heroes[0]}}</li>
+    <!--No es una forma optima de hacerlo, ya que no tenemos por que saber como de largo es el array, ademas de que tendríamos que escribirlo a mano.
+
+    Seria mejor usando ngFor, lo cual es como un bucle for.
+    La forma de  declararlo seria:
+     En cado de poner el indice sería igual pero con i
+     Para ordenadorlo, seria al index [i] sumarle 1
+    -->
+    <li *ngFor="let heroe of heroes; let i =index "> {{i+1}} - {{heroe}}</li>
+    
+
+</ul>
+
+<!--Para mostrar que heroe hemos borrado:-->
+<!-- El ngIf es para mostrar una condicion en angular, en esta caso lo que queremos es que el div se muestre si hay algun heroe borrado
+Al ponerlo en false no sale por ello si  lo ponemos en true si aparecerá
+Hay que ponerle una condicion, la cual es:
+*ngIf0"heroeBorrado !==''  con esto le estamos diciendo que si es distinto a vacio que no se muestre 
+
+Tambien vamos a añadirle un else 
+-->
+<div *ngIf="heroeBorrado !== '' ; else noBorrado ">
+<h3>Heroe Borrado</h3>
+<span>{{heroeBorrado}}</span>
+
+</div>
+<!-- Aqui añadimos el else con un ng-template y con el # pondremos el nombre correspondiente-->
+<<ng-template #noBorrado>
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+
+<!--Ejercicio: crea un boton el cual sirva para borrar uno de los heroes-->
+
+<button (click)="borrarHeroe()">
+    borrar
+</button>
+
