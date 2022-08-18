@@ -20,6 +20,5 @@ get personajes(){
 
 
 
-  
 
 }
