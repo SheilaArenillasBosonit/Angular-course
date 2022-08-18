@@ -1,0 +1,31 @@
+
+<h3>Agregar</h3>
+        <hr>
+        <!--En Angular tenemos un modulo para formularios el cual nos ayuda a trabajar con ellos, por ejemplo para que no se esté refrescando constantemente la página. 
+            Para ello hay que importar el modulo y después añadir el evento, que ene ste caso usaremos el ngSubmit que es el que nos proporciona ese modulo para que no se refresque
+        
+        -->
+        <form action=""  (ngSubmit)="agregar()">
+
+            <!--Ahora vamos a coger el valor de los imputs, para ello en el component.ts hemos creado un objeto que se llama nuevo, y lo que hacemos es darle el valor de ese nuevo personaje a los inputs
+
+
+            []==> para estrablecer una propiedad a objetos 
+            ()==>Emite o escuchar eventos
+        
+        -->
+
+
+            <input type="text" placerholder="Nombre"
+            name="nombre"
+            [(ngModel)]="nuevo.nombre" >
+
+
+            <!-- tambien se podría hacer así:
+                [value]="nuevo.nombre" (input)="cambiarNombre($event)"
+            -->
+            <input type="text" placerholder="Poder" name="poder"
+            [(ngModel)]="nuevo.poder">
+
+            <button type="submit">Agregar</button>
+        </form>
