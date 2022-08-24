@@ -1,0 +1,16 @@
+<h2>Busquedad</h2>
+        <hr>
+        <ul class="list-group">
+            <!--Le añadimos routerLink para añadirle las rutas
+            tambien le añadimos routerLinkActive="active"  para decirle que cuando pinche en cada una de ellas se active y se colore
+            En la primera ruta debemos poner el touter link active options para indicarle que tiene que ser exacto y así no este coloreado indefinidamente y solo cuando se pinche en esa opcion -->
+            <li routerLink="" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}" class="list-group-item">
+                Buscar pais</li>
+
+            <li routerLink="region" routerLinkActive="active"  class="list-group-item">
+                Por region</li>
+
+            <li routerLink="capital" routerLinkActive="active"  class="list-group-item">
+                Por capital</li>
+        </ul>
